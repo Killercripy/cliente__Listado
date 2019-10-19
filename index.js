@@ -10,7 +10,7 @@ function nuevaPelicula(caja, posicion = null) {
 }
 
 function nuevaPeliculaPosicion(caja) {
-    let posicion = parseInt(prompt("Indica la posicion"))-1;
+    let posicion = parseInt(prompt("Indica la posicion")) - 1;
     nuevaPelicula(caja, posicion);
 }
 
@@ -46,17 +46,26 @@ function borrarPeliculaSeleccionada(caja) {
         formulario = document.getElementById("formulario-peliculas-pendientes");
     }
 
-    Array.from(formulario.listado.options).map(function(option){
-        if (option.selected === true) {
-            posicion = option.index;
-        }
-    });
+    let option = Array.from(formulario.listado.options).filter(option => option.selected === true);
 
-    borrarPelicula(formulario.listado, posicion);
+    borrarPelicula(formulario.listado, option[0].index+1);
 }
 
 function borrarPelicula(lista, posicion) {
     console.log(posicion);
-    lista.remove(parseInt(posicion));
+    lista.remove(parseInt(posicion)-1);
     lista.selectedIndex = 0;
+}
+
+function introducirAPendiente() {
+    let formulario = document.getElementById("rabio-buttons");
+    if (formulario.movimientos.value === "mover") {
+        console.log("Moviendo...");
+    } else if (formulario.movimientos.value === "copiar") {
+        console.log("Copiando...");
+    }
+}
+
+function introducirAVisto() {
+   
 }

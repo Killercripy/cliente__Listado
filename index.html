@@ -26,10 +26,12 @@
             <br><button onclick="borrarPeliculaSeleccionada(this)">Borrar Pelicula Vista Seleccionada</button>
         </div>
         <div class="l-columns__area">
-            <button>-></button>
-            <br><button>
-                <-</button> <br><input type="radio" name="movimientos" value="copiar" checked>Copiar</input>
-                    <br><input type="radio" name="movimientos" value="mover">Mover</input>
+            <button onclick="introducirAPendiente()">-></button>
+            <br><button onclick="introducirAVisto()"><-</button> 
+            <form id="rabio-buttons">
+                <br><input type="radio" name="movimientos" value="copiar" checked>Copiar</input>
+                <br><input type="radio" name="movimientos" value="mover">Mover</input>
+            </form>
         </div>
         <div id="div-peliculas-pendientes" class="l-columns__area">
             <form name="formulario-peliculas-pendientes" id="formulario-peliculas-pendientes">
