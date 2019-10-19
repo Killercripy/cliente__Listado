@@ -52,20 +52,22 @@ function borrarPeliculaSeleccionada(caja) {
 }
 
 function borrarPelicula(lista, posicion) {
-    console.log(posicion);
     lista.remove(parseInt(posicion)-1);
     lista.selectedIndex = 0;
 }
 
 function introducirAPendiente() {
-    let formulario = document.getElementById("rabio-buttons");
-    if (formulario.movimientos.value === "mover") {
-        console.log("Moviendo...");
-    } else if (formulario.movimientos.value === "copiar") {
-        console.log("Copiando...");
-    }
+
 }
 
 function introducirAVisto() {
-   
+    let formulario = document.getElementById("rabio-buttons");
+    let pendientes = document.getElementById("formulario-peliculas-pendientes").listado;
+    let vistos = document.getElementById("formulario-peliculas-vistas");
+    if (formulario.movimientos.value === "mover") {
+        let option = Array.from(pendientes.options).filter(option => option.selected === true);
+        vistos.listado.add(option[0]);
+    } else if (formulario.movimientos.value === "copiar") {
+        console.log("Copiando...");
+    }
 }
