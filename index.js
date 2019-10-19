@@ -56,18 +56,34 @@ function borrarPelicula(lista, posicion) {
     lista.selectedIndex = 0;
 }
 
-function introducirAPendiente() {
-
+function introducirAPendientes() {
+    let formulario = document.getElementById("rabio-buttons");
+    let pendientes = document.getElementById("formulario-peliculas-pendientes");
+    let vistas = document.getElementById("formulario-peliculas-vistas").listado;
+    let option = Array.from(vistas.options).filter(option => option.selected === true);
+    if (formulario.movimientos.value === "mover") {
+        pendientes.listado.add(option[0]);
+    } else if (formulario.movimientos.value === "copiar") {
+        let optionCopy = document.createElement("option");
+        optionCopy.text = option[0].text;
+        pendientes.listado.add(optionCopy);
+    }
 }
 
-function introducirAVisto() {
+function introducirAVistas() {
     let formulario = document.getElementById("rabio-buttons");
     let pendientes = document.getElementById("formulario-peliculas-pendientes").listado;
     let vistos = document.getElementById("formulario-peliculas-vistas");
+    let option = Array.from(pendientes.options).filter(option => option.selected === true);
     if (formulario.movimientos.value === "mover") {
-        let option = Array.from(pendientes.options).filter(option => option.selected === true);
         vistos.listado.add(option[0]);
     } else if (formulario.movimientos.value === "copiar") {
-        console.log("Copiando...");
+        let optionCopy = document.createElement("option");
+        optionCopy.text = option[0].text;
+        vistos.listado.add(optionCopy);
     }
+}
+
+function introducir() {
+    console.log();
 }
