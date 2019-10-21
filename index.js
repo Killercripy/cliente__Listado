@@ -84,6 +84,16 @@ function introducirAVistas() {
     }
 }
 
-function introducir() {
-    console.log();
+function borrarListado(caja) {
+    if (caja.parentNode.id === "div-peliculas-vistas"){
+
+    }
+    let listado = document.getElementById("formulario-peliculas-vistas");
+    let opciones = listado.listado.options;
+    Array.from(opciones).map(opcion => listado.listado.remove(opcion.index));
+}
+
+function borrarListadoIndex(caja) {
+    let listado = document.getElementById("formulario-peliculas-vistas");
+    listado.listado.length = 0;
 }

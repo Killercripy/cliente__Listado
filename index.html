@@ -13,7 +13,7 @@
     <div class="l-columns">
         <div id="div-peliculas-vistas" class="l-columns__area">
             <form name="vistas" id="formulario-peliculas-vistas">
-                <select name="listado" size="10">
+                <select name="listado" size="10" multiple>
                     <option selected>El Padrino I</option>
                     <option>El Protegido</option>
                     <option>Cadena Perpetua</option>
@@ -24,6 +24,8 @@
             <br><button onclick="nuevaPeliculaPosicion(this)">Nueva Pelicula Vista En</button>
             <br><button onclick="borrarPeliculaPosicion(this)">Borrar Pelicula Vista</button>
             <br><button onclick="borrarPeliculaSeleccionada(this)">Borrar Pelicula Vista Seleccionada</button>
+            <br><button onclick="borrarListado(this)">Borrar Listado</button>
+            <br><button onclick="borrarListadoIndex(this)">Borrar Listado</button>
         </div>
         <div class="l-columns__area">
             <button onclick="introducirAPendientes()">-></button>
